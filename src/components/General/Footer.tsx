@@ -48,7 +48,7 @@ const Footer = () => {
               <ButtonWithIcon
                 title="Back to top"
                 icon={<DoubleUpArrows />}
-                classNames="bg-[#FFFFFF16] rounded border"
+                classNames="bg-[#FFFFFF16] rounded border text-sm"
                 action={scrollToTop}
               />
             </div>

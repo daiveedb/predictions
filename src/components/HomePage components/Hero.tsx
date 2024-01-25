@@ -5,7 +5,7 @@ import OutlineTelegram from "@/app/icons/OutlineTelegram";
 
 const Hero = () => {
   return (
-    <div className="p-10 py-20 bg-[radial-gradient(#00205B,#05022B,#05022B)]">
+    <div className="p-10 py-20 ">
       <p className="text-6xl font-bold w-[50%]">
         Win more with Expert predictions
       </p>

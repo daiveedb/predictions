@@ -165,3 +165,114 @@ export const socialIcons = [
     url: "",
   },
 ];
+
+export const superFreePicks = {
+  today: [
+    {
+      time: "3:00pm",
+      competition: "Seria A",
+      fixture: "Roma vs Napoli",
+      tip: "Home win",
+      odds: 2.55,
+    },
+    {
+      time: "3:00pm",
+      competition: "Seria A",
+      fixture: "Roma vs Napoli",
+      tip: "Home win",
+      odds: 2.55,
+    },
+    {
+      time: "3:00pm",
+      competition: "Seria A",
+      fixture: "Roma vs Napoli",
+      tip: "Home win",
+      odds: 2.55,
+    },
+    {
+      time: "3:00pm",
+      competition: "Seria A",
+      fixture: "Roma vs Napoli",
+      tip: "Home win",
+      odds: 2.55,
+    },
+    {
+      time: "3:00pm",
+      competition: "Seria A",
+      fixture: "Roma vs Napoli",
+      tip: "Home win",
+      odds: 2.55,
+    },
+    {
+      time: "3:00pm",
+      competition: "Seria A",
+      fixture: "Roma vs Napoli",
+      tip: "Home win",
+      odds: 2.55,
+    },
+    {
+      time: "3:00pm",
+      competition: "Seria A",
+      fixture: "Roma vs Napoli",
+      tip: "Home win",
+      odds: 2.55,
+    },
+    {
+      time: "3:00pm",
+      competition: "Seria A",
+      fixture: "Roma vs Napoli",
+      tip: "Home win",
+      odds: 2.55,
+    },
+  ],
+  yesterday: [
+    {
+      time: "3:00pm",
+      competition: "Seria A",
+      fixture: "Roma vs Napoli",
+      result: "Roma win ",
+    },
+    {
+      time: "3:00pm",
+      competition: "Seria A",
+      fixture: "Roma vs Napoli",
+      result: "Roma win ",
+    },
+    {
+      time: "3:00pm",
+      competition: "Seria A",
+      fixture: "Roma vs Napoli",
+      result: "Roma win ",
+    },
+    {
+      time: "3:00pm",
+      competition: "Seria A",
+      fixture: "Roma vs Napoli",
+      result: "Roma win ",
+    },
+    {
+      time: "3:00pm",
+      competition: "Seria A",
+      fixture: "Roma vs Napoli",
+      result: "Roma win ",
+    },
+    {
+      time: "3:00pm",
+      competition: "Seria A",
+      fixture: "Roma vs Napoli",
+      result: "Roma win ",
+    },
+    {
+      time: "3:00pm",
+      competition: "Seria A",
+      fixture: "Roma vs Napoli",
+      result: "Roma win ",
+    },
+    {
+      time: "3:00pm",
+      competition: "Seria A",
+      fixture: "Roma vs Napoli",
+      result: "Roma win ",
+    },
+  ],
+};
