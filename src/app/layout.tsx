@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navigation/Navbar";
 import Footer from "@/components/General/Footer";
+import HomeSvgs from "@/components/HomePage components/HomeSvgs";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,10 +20,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="p-10 pb-0 px-0 text-white font-wix w-full bg-main_darker_blue">
+        <div className="p-10 pb-0 px-0 text-white font-wix w-full bg-main_darker_blue relative">
           <Navbar />
           <div className="px-10">{children}</div>
           <Footer />
+          <HomeSvgs />
         </div>
       </body>
     </html>

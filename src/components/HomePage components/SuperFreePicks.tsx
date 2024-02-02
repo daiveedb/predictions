@@ -2,24 +2,46 @@
 import React from "react";
 import { Tab } from "@headlessui/react";
 import cn from "@/utils/classNames";
-import YesterdayPicksTable from "./YesterdayPicksTable";
-import { superFreePicks } from "@/dummydata";
-import TodayPicksTable from "./TodayPicksTable";
+import YesterdayPicksTable, {
+  YesterdayPicksProps,
+} from "./YesterdayPicksTable";
+import TodayPicksTable, { TodayPicksProps } from "./TodayPicksTable";
 import FootballImage from "@/app/icons/FootballImage";
 
-const SuperFreePicks = () => {
-  const days = ["yesterday", "today"];
+export interface PicksTableProps {
+  tablist: string[];
+  list1: TodayPicksProps[];
+  list2: YesterdayPicksProps[];
+  classNames?: string;
+  title?: string;
+  subtitle?: string;
+  tableHeadColor?: string;
+}
+const SuperFreePicks: React.FunctionComponent<PicksTableProps> = ({
+  tablist = ["today,tomorrow"],
+  list1,
+  list2,
+  classNames,
+  title = "Super Free Picks",
+  subtitle = "Our expert analysis and predictions for upcoming sporting events",
+  tableHeadColor = "bg-[#0E1746]",
+}) => {
   return (
-    <div className="p-10 bg-gradient-to-b from-transparent to-cardBg_blue rounded-2xl rounded-tr-none relative border-[0.2px] border-[#FFFFFF54]">
-      <p className="home-header">Super Free Picks</p>
-      <p className="text-helperText ">
-        Our expert analysis and predictions for upcoming sporting events
-      </p>
+    <div
+      className={cn(
+        "p-10 bg-gradient-to-b from-transparent to-cardBg_blue rounded-2xl rounded-tr-none relative border-[0.2px] border-[#FFFFFF54]",
+        classNames
+      )}
+    >
+      <p className="home-header">{title}</p>
+      <p className="text-helperText ">{subtitle}</p>
 
       <div className="p-10 px-4">
         <Tab.Group defaultIndex={1}>
-          <Tab.List className={"flex gap-x-4 mb-5"}>
-            {days.map((item: string, index: number) => {
+          <Tab.List
+            className={cn("flex gap-x-4 mb-3 p-2 rounded-md", tableHeadColor)}
+          >
+            {tablist.map((item: string, index: number) => {
               return (
                 <Tab key={index} className={"outline-none"}>
                   {({ selected }) => (
@@ -37,10 +59,16 @@ const SuperFreePicks = () => {
           </Tab.List>
           <Tab.Panels>
             <Tab.Panel>
-              <YesterdayPicksTable tableData={superFreePicks.yesterday} />
+              <YesterdayPicksTable
+                tableHeadColor={tableHeadColor}
+                tableData={list2}
+              />
             </Tab.Panel>
             <Tab.Panel>
-              <TodayPicksTable tableData={superFreePicks.today} />
+              <TodayPicksTable
+                tableHeadColor={tableHeadColor}
+                tableData={list1}
+              />
             </Tab.Panel>
           </Tab.Panels>
         </Tab.Group>

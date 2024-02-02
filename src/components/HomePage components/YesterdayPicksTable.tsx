@@ -20,9 +20,11 @@ const columnHelper = createColumnHelper<YesterdayPicksProps>();
 
 export interface YesterdayTableProps {
   tableData: YesterdayPicksProps[];
+  tableHeadColor?: string;
 }
 const YesterdayPicksTable: React.FunctionComponent<YesterdayTableProps> = ({
   tableData,
+  tableHeadColor = "bg-[#0E1746]",
 }) => {
   const columns = [
     columnHelper.accessor((row) => row.time, {
@@ -61,7 +63,10 @@ const YesterdayPicksTable: React.FunctionComponent<YesterdayTableProps> = ({
     <table className="w-full rounded-2xl p-5">
       <thead className="w-full rounded-t-2xl bg-yellow-400">
         {table.getHeaderGroups().map((headerGroup, index) => (
-          <tr className="rounded rounded-t-2xl bg-[#0E1746]" key={index}>
+          <tr
+            className={cn("rounded rounded-t-2xl bg-[#0E1746]", tableHeadColor)}
+            key={index}
+          >
             {headerGroup.headers.map((header) => (
               <th
                 className="mb-2 border-b p-4 px-10 text-left font-semibold whitespace-nowrap"

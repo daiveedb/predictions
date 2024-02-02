@@ -5,7 +5,6 @@ import {
   getCoreRowModel,
   useReactTable,
 } from "@tanstack/react-table";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import cn from "@/utils/classNames";
 
@@ -21,9 +20,11 @@ const columnHelper = createColumnHelper<TodayPicksProps>();
 
 export interface TodayTableProps {
   tableData: TodayPicksProps[];
+  tableHeadColor?: string;
 }
 const TodayPicksTable: React.FunctionComponent<TodayTableProps> = ({
   tableData,
+  tableHeadColor = "bg-[#0E1746]",
 }) => {
   const columns = [
     columnHelper.accessor((row) => row.time, {
@@ -64,9 +65,12 @@ const TodayPicksTable: React.FunctionComponent<TodayTableProps> = ({
   }, [tableData]);
   return (
     <table className="w-full rounded-2xl p-5">
-      <thead className="w-full table-header rounded-t-2xl bg-yellow-400">
+      <thead className="w-full table-header rounded-t-2xl">
         {table.getHeaderGroups().map((headerGroup, index) => (
-          <tr className="rounded rounded-t-2xl bg-[#0E1746]" key={index}>
+          <tr
+            className={cn("rounded rounded-t-2xl bg-[#0E1746]", tableHeadColor)}
+            key={index}
+          >
             {headerGroup.headers.map((header) => (
               <th
                 className="mb-2 border-b p-4 px-10 text-left font-semibold whitespace-nowrap"

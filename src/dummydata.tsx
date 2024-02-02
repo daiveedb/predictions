@@ -18,7 +18,7 @@ export const navLinks: navLinkProps[] = [
   {
     id: 2,
     title: "Tips",
-    disabled: true,
+    disabled: false,
     url: "/tips",
   },
   {

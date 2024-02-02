@@ -21,6 +21,7 @@ const config: Config = {
         disabledGray: "#C1C1C1",
         helperText: "#D9D9D9",
         helperTitle: "#606C87",
+        darkGray: "#181B2A",
       },
       fontFamily: {
         wix: ['"Wix Madefor Display"', "sans-serif"],
