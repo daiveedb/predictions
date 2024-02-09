@@ -30,7 +30,7 @@ export const navLinks: navLinkProps[] = [
   {
     id: 4,
     title: "Contact",
-    disabled: true,
+    disabled: false,
     url: "/contact",
   },
 ];

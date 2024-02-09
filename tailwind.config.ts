@@ -22,6 +22,7 @@ const config: Config = {
         helperText: "#D9D9D9",
         helperTitle: "#606C87",
         darkGray: "#181B2A",
+        predictYellow: "#FFB800",
       },
       fontFamily: {
         wix: ['"Wix Madefor Display"', "sans-serif"],
