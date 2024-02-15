@@ -24,7 +24,7 @@ export const navLinks: navLinkProps[] = [
   {
     id: 3,
     title: "Pricing",
-    disabled: true,
+    disabled: false,
     url: "/pricing",
   },
   {
@@ -273,6 +273,93 @@ export const superFreePicks = {
       competition: "Seria A",
       fixture: "Roma vs Napoli",
       result: "Roma win ",
+    },
+  ],
+};
+
+export const predictionPacks = {
+  weekly: [
+    {
+      id: 101,
+      name: "Starter Pack",
+      price: 6000,
+      benefits: [
+        "Access to daily sure 2 odds",
+        "Access to daily sure 2 odds",
+        "Access to daily sure 2 odds",
+      ],
+    },
+    {
+      id: 102,
+      name: "Starter Pack",
+      price: 12000,
+      benefits: [
+        "Access to daily sure 2 odds",
+        "Access to daily sure 2 odds",
+        "Access to daily sure 2 odds",
+      ],
+    },
+    {
+      id: 103,
+      name: "Starter Pack",
+      price: 17000,
+      benefits: [
+        "Access to daily sure 2 odds",
+        "Access to daily sure 2 odds",
+        "Access to daily sure 2 odds",
+      ],
+    },
+    {
+      id: 104,
+      name: "Starter Pack",
+      price: 22000,
+      benefits: [
+        "Access to daily sure 2 odds",
+        "Access to daily sure 2 odds",
+        "Access to daily sure 2 odds",
+      ],
+    },
+  ],
+  monthly: [
+    {
+      id: 201,
+      name: "Starter Pack",
+      price: 50000,
+      benefits: [
+        "Access to daily sure 2 odds",
+        "Access to daily sure 2 odds",
+        "Access to daily sure 2 odds",
+      ],
+    },
+    {
+      id: 202,
+      name: "Starter Pack",
+      price: 70000,
+      benefits: [
+        "Access to daily sure 2 odds",
+        "Access to daily sure 2 odds",
+        "Access to daily sure 2 odds",
+      ],
+    },
+    {
+      id: 203,
+      name: "Starter Pack",
+      price: 86000,
+      benefits: [
+        "Access to daily sure 2 odds",
+        "Access to daily sure 2 odds",
+        "Access to daily sure 2 odds",
+      ],
+    },
+    {
+      id: 204,
+      name: "Starter Pack",
+      price: 106000,
+      benefits: [
+        "Access to daily sure 2 odds",
+        "Access to daily sure 2 odds",
+        "Access to daily sure 2 odds",
+      ],
     },
   ],
 };

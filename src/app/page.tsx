@@ -9,9 +9,6 @@ import { superFreePicks } from "@/dummydata";
 import { useEffect } from "react";
 
 export default function Home() {
-  // useEffect(() => {
-  //   document.body.requestFullscreen();
-  // }, []);
   return (
     <div>
       <div className="relative bg-[radial-gradient(#00205B,#05022B,#05022B)]">
