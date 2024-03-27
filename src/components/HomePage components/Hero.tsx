@@ -25,7 +25,7 @@ const Hero = () => {
         </Link>
         <ButtonWithIcon
           title="Join us on Telegram"
-          classNames="rounded-full bg-white text-xs sm:text-sm md:text-base text-black px-5 w-max text-nowrap nowrap"
+          classNames="rounded-full hidden sm:flex bg-white text-xs sm:text-sm md:text-base text-black px-5 w-max text-nowrap nowrap"
           icon={<OutlineTelegram width={15} height={15} />}
         />
       </div>

@@ -36,3 +36,28 @@ input::-webkit-inner-spin-button {
 input[type=number] {
   -moz-appearance: textfield;
 }
+
+@media screen and (max-width:350px) {
+  .game-icon{
+    @apply h-[70px] w-[70px]
+  }
+  .tab-button{
+    @apply w-[6rem] flex justify-center items-center
+  }
+  .pricing-description{
+    @apply text-[8px]
+  }
+  .subscribe-btn{
+    @apply my-0
+  }
+  .game-option{
+    @apply gap-x-1 p-2
+  }
+  .game-option-price{
+    @apply w-[60px]
+  }
+  .selected-container{
+    @apply w-4 h-4
+  }
+  
+}

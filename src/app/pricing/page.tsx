@@ -95,13 +95,13 @@ const Page = () => {
             <p className="text-xl sm:text-2xl font-semibold font-">
               Select Prediction Options
             </p>
-            <p className="text-xs text-[#DDDDDD] w-[90%]">
+            <p className="text-xs pricing-description text-[#DDDDDD] w-[90%]">
               Select your preferred subscription plan option for highly rated
               predictions{" "}
             </p>
             <input
               className={cn(
-                "w-full rounded-md bg-[#FFFFFF33] mt-6 p-4 text-sm outline-none",
+                "w-full rounded-md bg-[#FFFFFF33] mt-4 sm:mt-6 p-4 text-sm outline-none",
                 { "border border-red-400": error }
               )}
               maxLength={12}
@@ -178,19 +178,19 @@ const Page = () => {
                           {({ checked }) => (
                             <div
                               className={cn(
-                                "w-full bg-[#FFFFFF33] rounded-md p-3 flex items-center gap-x-3 sm:gap-x-7 relative"
+                                "w-full bg-[#FFFFFF33] game-option rounded-md p-3 flex items-center gap-x-3 sm:gap-x-7 relative"
                               )}
                             >
                               <div
                                 className={cn(
-                                  " w-5 h-5 border-2 border-white rounded-full",
+                                  " selected-container w-5 h-5 border-2 border-white rounded-full",
                                   { "bg-[#FFB800]": checked }
                                 )}
                               ></div>
                               <p className="capitalize text-xs sm:text-sm md:text-base">
                                 {item.subscription_name}
                               </p>
-                              <div className="absolute inset-y-0 right-0 text-black w-[80px] sm:w-[100px] font-semibold bg-white rounded-md flex justify-center items-center text-xs sm:text-xs">
+                              <div className="absolute inset-y-0 right-0 text-black game-option-price w-[80px] sm:w-[100px] font-semibold bg-white rounded-md flex justify-center items-center text-xs sm:text-xs">
                                 ₦{item?.subscription_amount}
                               </div>
                             </div>
@@ -203,7 +203,7 @@ const Page = () => {
               )}
             </div>
             <button
-              className="w-full bg-[#FFB800] rounded-md p-3 flex justify-center items-center outline-none text-black my-4 disabled:bg-[#FFB80066]"
+              className="w-full bg-[#FFB800] subscribe-btn rounded-md p-3 flex justify-center items-center outline-none text-black my-4 disabled:bg-[#FFB80066]"
               disabled={!phoneNumber}
               onClick={() => handleSelect()}
             >
