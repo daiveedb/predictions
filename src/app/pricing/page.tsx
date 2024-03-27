@@ -137,7 +137,9 @@ const Page = () => {
                         >
                           <p className="text-sm">
                             {item}{" "}
-                            <span className="hidden sm:flex">Subscription</span>
+                            <span className="hidden sm:inline">
+                              Subscription
+                            </span>
                           </p>
                         </div>
                       )}
@@ -145,63 +147,76 @@ const Page = () => {
                   );
                 })}
               </Tab.List>
-              <Tab.Panels>{}</Tab.Panels>
+              <Tab.Panels>
+                {tablist.map((item: string, index: number) => {
+                  return (
+                    <Tab.Panel className="py-5 pt-0 flex justify-center items-center">
+                      {loading ? (
+                        <div className="py-10">
+                          <ReactLoader
+                            type="spin"
+                            color="#FFB800"
+                            height={50}
+                            width={50}
+                          />
+                        </div>
+                      ) : (
+                        <RadioGroup
+                          value={selectedSubsciption}
+                          onChange={setSelectedSubscription}
+                          className={
+                            "grid grid-cols-1 gap-2 w-full max-h-[250px] sm:max-h-[300px] overflow-y-scroll"
+                          }
+                        >
+                          {subscriptionData?.data
+                            ?.filter((game: any) => {
+                              return (
+                                game.duration_of_subscription_type ===
+                                item.toUpperCase()
+                              );
+                            })
+                            .map(
+                              (item: {
+                                id: number;
+                                subscription_name: string;
+                                subscription_amount: number;
+                                subscription_duration: number;
+                                duration_of_subscription_type: string;
+                              }) => {
+                                return (
+                                  <RadioGroup.Option key={item.id} value={item}>
+                                    {({ checked }) => (
+                                      <div
+                                        className={cn(
+                                          "w-full bg-[#FFFFFF33] game-option rounded-md p-3 flex items-center gap-x-3 sm:gap-x-7 relative"
+                                        )}
+                                      >
+                                        <div
+                                          className={cn(
+                                            " selected-container w-5 h-5 border-2 border-white rounded-full",
+                                            { "bg-[#FFB800]": checked }
+                                          )}
+                                        ></div>
+                                        <p className="capitalize text-xs sm:text-sm md:text-base">
+                                          {item.subscription_name}
+                                        </p>
+                                        <div className="absolute inset-y-0 right-0 text-black game-option-price w-[80px] sm:w-[100px] font-semibold bg-white rounded-md flex justify-center items-center text-xs sm:text-xs">
+                                          ₦{item?.subscription_amount}
+                                        </div>
+                                      </div>
+                                    )}
+                                  </RadioGroup.Option>
+                                );
+                              }
+                            )}
+                        </RadioGroup>
+                      )}
+                    </Tab.Panel>
+                  );
+                })}
+              </Tab.Panels>
             </Tab.Group>
-            <div className="py-5 pt-0 flex justify-center items-center">
-              {loading ? (
-                <div className="py-10">
-                  <ReactLoader
-                    type="spin"
-                    color="#FFB800"
-                    height={50}
-                    width={50}
-                  />
-                </div>
-              ) : (
-                <RadioGroup
-                  value={selectedSubsciption}
-                  onChange={setSelectedSubscription}
-                  className={
-                    "grid grid-cols-1 gap-2 w-full max-h-[250px] sm:max-h-[300px] overflow-y-scroll"
-                  }
-                >
-                  {subscriptionData?.data.map(
-                    (item: {
-                      id: number;
-                      subscription_name: string;
-                      subscription_amount: number;
-                      subscription_duration: number;
-                      duration_of_subscription_type: string;
-                    }) => {
-                      return (
-                        <RadioGroup.Option key={item.id} value={item}>
-                          {({ checked }) => (
-                            <div
-                              className={cn(
-                                "w-full bg-[#FFFFFF33] game-option rounded-md p-3 flex items-center gap-x-3 sm:gap-x-7 relative"
-                              )}
-                            >
-                              <div
-                                className={cn(
-                                  " selected-container w-5 h-5 border-2 border-white rounded-full",
-                                  { "bg-[#FFB800]": checked }
-                                )}
-                              ></div>
-                              <p className="capitalize text-xs sm:text-sm md:text-base">
-                                {item.subscription_name}
-                              </p>
-                              <div className="absolute inset-y-0 right-0 text-black game-option-price w-[80px] sm:w-[100px] font-semibold bg-white rounded-md flex justify-center items-center text-xs sm:text-xs">
-                                ₦{item?.subscription_amount}
-                              </div>
-                            </div>
-                          )}
-                        </RadioGroup.Option>
-                      );
-                    }
-                  )}
-                </RadioGroup>
-              )}
-            </div>
+
             <button
               className="w-full bg-[#FFB800] subscribe-btn rounded-md p-3 flex justify-center items-center outline-none text-black my-4 disabled:bg-[#FFB80066]"
               disabled={!phoneNumber}

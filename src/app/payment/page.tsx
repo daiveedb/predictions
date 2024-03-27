@@ -100,10 +100,7 @@ const Page = () => {
               Select your preferred bank and confirm, dial USSD code and make
               payment.
             </p>
-            <UssdComponent
-              phoneNumber={phoneNumber}
-              amount={parseInt(pickPrice as string)}
-            />
+
             {transferDetails?.account_name &&
               transferDetails.account_number &&
               transferDetails.bank_name && (
