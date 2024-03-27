@@ -42,9 +42,9 @@ const GameDropDown = ({ name, price }: { name: string; price: number }) => {
       </p>
       <div className="bg-[#FFFFFF1A] rounded-md p-2">
         {/* @ts-ignore */}
-        {gameDetails[name].map((item: string) => {
+        {gameDetails[name].map((item: string, index: number) => {
           return (
-            <div>
+            <div key={index}>
               <p className="text-xs sm:text-sm py-1">{item}</p>
             </div>
           );

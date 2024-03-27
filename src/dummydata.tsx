@@ -37,16 +37,16 @@ export const navLinks: navLinkProps[] = [
 
 export const predictionOptions: string[] = [
   "Over 1.5",
-  "Over 1.5",
-  "Over 1.5",
-  "Over 1.5",
-  "Over 1.5",
-  "Over 1.5",
-  "Over 1.5",
-  "Over 1.5",
-  "Over 1.5",
-  "Over 1.5",
-  "Over 1.5",
+  "Double chance",
+  "Correct score",
+  "Corners",
+  "Score both halves",
+  "HT/FT Draw",
+  "BTS",
+  "Win either half",
+  "Win both halves",
+  "1X2",
+  "Handicap",
 ];
 
 export const otherGames: gameIconProps[] = [
