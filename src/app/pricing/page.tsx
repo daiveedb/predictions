@@ -150,7 +150,10 @@ const Page = () => {
               <Tab.Panels>
                 {tablist.map((item: string, index: number) => {
                   return (
-                    <Tab.Panel className="py-5 pt-0 flex justify-center items-center">
+                    <Tab.Panel
+                      key={index}
+                      className="py-5 pt-0 flex justify-center items-center"
+                    >
                       {loading ? (
                         <div className="py-10">
                           <ReactLoader
