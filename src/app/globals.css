@@ -54,10 +54,13 @@ input[type=number] {
     @apply gap-x-1 p-2
   }
   .game-option-price{
-    @apply w-[60px]
+    @apply w-[60px] right-10
   }
   .selected-container{
     @apply w-4 h-4
+  }
+  .dropdown-container{
+    @apply w-[30px]
   }
   
 }

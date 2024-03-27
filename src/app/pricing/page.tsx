@@ -4,7 +4,7 @@ import PhoneInput from "@/components/Pricing/PhoneInput";
 import PricingPackPanel from "@/components/Pricing/PricingPackPanel";
 import { predictionPacks } from "@/dummydata";
 import cn from "@/utils/classNames";
-import { Dialog, RadioGroup, Tab } from "@headlessui/react";
+import { Dialog, Menu, Popover, RadioGroup, Tab } from "@headlessui/react";
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import CloseModalIcon from "../icons/CloseModalIcon";
@@ -15,6 +15,8 @@ import {
   TransferDetailsStoreProps,
   useTransferDetails,
 } from "@/store/transferDetailsStore";
+import DownArrow from "../icons/DownArrow";
+import GameDropDown from "@/components/Pricing/GameDropDown";
 
 const Page = () => {
   const router = useRouter();
@@ -168,7 +170,7 @@ const Page = () => {
                           value={selectedSubsciption}
                           onChange={setSelectedSubscription}
                           className={
-                            "grid grid-cols-1 gap-2 w-full max-h-[250px] sm:max-h-[300px] overflow-y-scroll"
+                            "grid grid-cols-1 gap-2 w-full max-h-[250px] sm:max-h-[350px]"
                           }
                         >
                           {subscriptionData?.data
@@ -189,24 +191,54 @@ const Page = () => {
                                 return (
                                   <RadioGroup.Option key={item.id} value={item}>
                                     {({ checked }) => (
-                                      <div
-                                        className={cn(
-                                          "w-full bg-[#FFFFFF33] game-option rounded-md p-3 flex items-center gap-x-3 sm:gap-x-7 relative"
-                                        )}
-                                      >
+                                      <Menu>
                                         <div
                                           className={cn(
-                                            " selected-container w-5 h-5 border-2 border-white rounded-full",
-                                            { "bg-[#FFB800]": checked }
+                                            "w-full bg-[#FFFFFF33] game-option rounded-md p-3 flex items-center gap-x-3 sm:gap-x-7 relative"
                                           )}
-                                        ></div>
-                                        <p className="capitalize text-xs sm:text-sm md:text-base">
-                                          {item.subscription_name}
-                                        </p>
-                                        <div className="absolute inset-y-0 right-0 text-black game-option-price w-[80px] sm:w-[100px] font-semibold bg-white rounded-md flex justify-center items-center text-xs sm:text-xs">
-                                          ₦{item?.subscription_amount}
+                                        >
+                                          <div
+                                            className={cn(
+                                              " selected-container w-5 h-5 border-2 border-white rounded-full",
+                                              { "bg-[#FFB800]": checked }
+                                            )}
+                                          ></div>
+                                          <p className="capitalize text-xs sm:text-sm md:text-base">
+                                            {item.subscription_name}
+                                          </p>
+                                          <div className="absolute inset-y-1 right-16 text-black game-option-price w-[80px] sm:w-[100px] font-semibold bg-white rounded-md flex justify-center items-center text-xs sm:text-xs">
+                                            ₦{item?.subscription_amount}
+                                          </div>
+                                          <div
+                                            onClick={(e) => {}}
+                                            className="absolute inset-y-1 right-1 text-black dropdown-container w-[50px] font-semibold bg-white rounded-md flex justify-center items-center text-xs sm:text-xs"
+                                          >
+                                            <Menu.Button
+                                              className={"w-full h-full"}
+                                            >
+                                              <div className="w-full h-full flex justify-center items-center">
+                                                <DownArrow />
+                                              </div>
+                                            </Menu.Button>
+                                          </div>
+                                          <Menu.Items
+                                            className={
+                                              "absolute w-full top-full left-0"
+                                            }
+                                          >
+                                            <Menu.Item>
+                                              <div className="top-full absolute z-10 transition-all w-full">
+                                                <GameDropDown
+                                                  name={item.subscription_name}
+                                                  price={
+                                                    item.subscription_amount
+                                                  }
+                                                />
+                                              </div>
+                                            </Menu.Item>
+                                          </Menu.Items>
                                         </div>
-                                      </div>
+                                      </Menu>
                                     )}
                                   </RadioGroup.Option>
                                 );
