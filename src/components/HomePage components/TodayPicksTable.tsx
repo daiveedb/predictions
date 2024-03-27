@@ -7,13 +7,14 @@ import {
 } from "@tanstack/react-table";
 import { useRouter } from "next/navigation";
 import cn from "@/utils/classNames";
+import moment from "moment";
 
 export interface TodayPicksProps {
-  time: string;
-  competition: string;
-  fixture: string;
-  tip: string;
-  odds: number;
+  fixture_time: string;
+  league_name: string;
+  fixture_name: string;
+  predicted_advice: string;
+  predicted_home_score_odd: number;
 }
 
 const columnHelper = createColumnHelper<TodayPicksProps>();
@@ -27,23 +28,23 @@ const TodayPicksTable: React.FunctionComponent<TodayTableProps> = ({
   tableHeadColor = "bg-[#0E1746]",
 }) => {
   const columns = [
-    columnHelper.accessor((row) => row.time, {
+    columnHelper.accessor((row) => row.fixture_time, {
       header: "Time",
-      cell: (info) => info.renderValue(),
+      cell: (info) => moment(info.renderValue()).format("LT"),
     }),
-    columnHelper.accessor((row) => row.competition, {
+    columnHelper.accessor((row) => row.league_name, {
       header: "Competition",
       cell: (info) => info.renderValue(),
     }),
-    columnHelper.accessor((row) => row.fixture, {
+    columnHelper.accessor((row) => row.fixture_name, {
       header: "Fixture",
       cell: (info) => info.renderValue(),
     }),
-    columnHelper.accessor((row) => row.tip, {
+    columnHelper.accessor((row) => row.predicted_advice, {
       header: "Tip",
       cell: (info) => info.renderValue(),
     }),
-    columnHelper.accessor((row) => row.odds, {
+    columnHelper.accessor((row) => row.predicted_home_score_odd, {
       header: "Odds",
       cell: (info) => info.renderValue(),
     }),

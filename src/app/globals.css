@@ -18,7 +18,7 @@ body{
 }
 
 .home-header{
-  @apply text-4xl font-semibold
+  @apply text-2xl md:text-4xl font-semibold
 }
 .tab-button{
   @apply p-2 w-[11.25rem] px-5 rounded-md outline-none

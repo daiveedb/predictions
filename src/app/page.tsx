@@ -9,21 +9,31 @@ import SuperFreePicks from "@/components/HomePage components/SuperFreePicks";
 import Testimonies from "@/components/HomePage components/Testimonies";
 import UpcomingFixtures from "@/components/HomePage components/UpcomingFixtures";
 import { superFreePicks } from "@/dummydata";
+import moment from "moment";
 import { useEffect } from "react";
+import ReactLoader from "react-loading";
 
 export default function Home() {
-  const { data: UpcomingMatches, isLoading: fixturesLoading } =
-    useGetUpcomingMatches();
   const { data: freePicksData, isLoading } = useGetFreePicks();
+  const today = moment(Date.now()).format("YYYY-MM-DD");
+  const tomorrow = moment(Date.now()).add(1, "days").format("YYYY-MM-DD");
+
   return (
     <div>
       <div className="relative bg-[radial-gradient(#00205B,#05022B,#05022B)]">
         <Hero />
-        <SuperFreePicks
-          tablist={["yesterday", "today"]}
-          list1={superFreePicks.today}
-          list2={superFreePicks.yesterday}
-        />
+        {freePicksData && (
+          <SuperFreePicks
+            tablist={["Today", "Tomorrow"]}
+            list1={freePicksData?.all_prediction[today]}
+            list2={freePicksData?.all_prediction[tomorrow]}
+          />
+        )}
+        {isLoading && (
+          <div className="flex justify-center items-center w-full py-20">
+            <ReactLoader type="spin" width={80} height={80} color="white" />
+          </div>
+        )}
       </div>
       <UpcomingFixtures />
       <PredictionPlan />

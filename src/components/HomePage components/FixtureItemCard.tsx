@@ -1,31 +1,32 @@
 import FootballImage from "@/app/icons/FootballImage";
 import React from "react";
+import moment from "moment";
 
 export interface fixtureCardProps {
-  date: string;
-  team1: string;
-  team2: string;
-  competition: string;
+  fixture_date: string;
+  home_team: string;
+  away_team: string;
+  league_name: string;
 }
 const FixtureItemCard: React.FunctionComponent<fixtureCardProps> = ({
-  date,
-  team1,
-  team2,
-  competition,
+  fixture_date,
+  home_team,
+  away_team,
+  league_name,
 }) => {
   return (
     <div className="p-5 py-7 bg-[#191533] rounded-lg shadow">
       <div className="flex justify-between items-center font-montserrat text-helperText text-xs">
         <div className="flex gap-x-2 items-center">
           <FootballImage width={20} height={20} />
-          <p>{competition}</p>
+          <p>{league_name}</p>
         </div>
-        <p>{date}</p>
+        <p>{moment(fixture_date).format("MMM Do YY (LT)")}</p>
       </div>
       <div className=" flex justify-between">
-        <p>{team1}</p>
+        <p>{home_team}</p>
         <p>vs</p>
-        <p>{team2}</p>
+        <p>{away_team}</p>
       </div>
     </div>
   );

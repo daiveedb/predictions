@@ -3,7 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 
 export const getFreePicks = async () => {
   const response = await axios.get(
-    "https://dev.whisperwyse.com/sport_lotto/web_soccer_prediction/?link_id=324f245Z"
+    "https://dev.whisperwyse.com/sport_lotto/web_soccer_prediction/?link_id=83x4011S"
   );
   return response.data;
 };

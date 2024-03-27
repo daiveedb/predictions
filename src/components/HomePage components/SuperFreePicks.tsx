@@ -11,7 +11,7 @@ import FootballImage from "@/app/icons/FootballImage";
 export interface PicksTableProps {
   tablist: string[];
   list1: TodayPicksProps[];
-  list2: YesterdayPicksProps[];
+  list2: TodayPicksProps[];
   classNames?: string;
   title?: string;
   subtitle?: string;
@@ -29,15 +29,15 @@ const SuperFreePicks: React.FunctionComponent<PicksTableProps> = ({
   return (
     <div
       className={cn(
-        "p-10 bg-gradient-to-b from-transparent to-cardBg_blue rounded-2xl rounded-tr-none relative border-[0.2px] border-[#FFFFFF54]",
+        "p-10 px-3 lg:px-10 bg-gradient-to-b mt-5 from-transparent to-cardBg_blue rounded-2xl rounded-tr-none relative border-[0.2px] border-[#FFFFFF54]",
         classNames
       )}
     >
-      <p className="home-header">{title}</p>
-      <p className="text-helperText ">{subtitle}</p>
+      <p className="home-header md:px-10">{title}</p>
+      <p className="text-helperText md:px-10">{subtitle}</p>
 
-      <div className="p-10 px-4">
-        <Tab.Group defaultIndex={1}>
+      <div className="md:p-10 p-4  px-0">
+        <Tab.Group defaultIndex={0}>
           <Tab.List
             className={cn("flex gap-x-4 mb-3 p-2 rounded-md", tableHeadColor)}
           >
@@ -57,9 +57,9 @@ const SuperFreePicks: React.FunctionComponent<PicksTableProps> = ({
               );
             })}
           </Tab.List>
-          <Tab.Panels>
+          <Tab.Panels className={"overflow-scroll"}>
             <Tab.Panel>
-              <YesterdayPicksTable
+              <TodayPicksTable
                 tableHeadColor={tableHeadColor}
                 tableData={list2}
               />
@@ -73,7 +73,7 @@ const SuperFreePicks: React.FunctionComponent<PicksTableProps> = ({
           </Tab.Panels>
         </Tab.Group>
       </div>
-      <FootballImage className="absolute  top-4 right-4" />
+      <FootballImage className="absolute hidden md:block  top-4 right-4" />
     </div>
   );
 };
