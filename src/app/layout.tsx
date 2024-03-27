@@ -7,6 +7,7 @@ import Footer from "@/components/General/Footer";
 import HomeSvgs from "@/components/HomePage components/HomeSvgs";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Suspense } from "react";
+import MobileNav from "@/components/Navigation/MobileNav";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -28,6 +29,7 @@ export default function RootLayout({
           <Suspense>
             <div className="p-10 pt-0 sm:pt-5 md:pt-10 pb-0 px-0 text-white font-wix w-full bg-main_darker_blue relative">
               <Navbar />
+              <MobileNav />
               <div className="px-3 sm:px-10">{children}</div>
               <Footer />
               <HomeSvgs />

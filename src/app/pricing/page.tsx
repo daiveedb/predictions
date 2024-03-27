@@ -38,6 +38,7 @@ const Page = () => {
     duration_of_subscription_type: string;
   }>();
   const [error, setError] = useState("");
+  const tablist = ["Weekly", "Monthly"];
 
   const handleSelect = () => {
     if ((phoneNumber as string).length < 11) {
@@ -84,7 +85,10 @@ const Page = () => {
             "absolute left-1/2 top-1/2 flex min-h-max font-wix md:min-h-[600px] text-white h-max w-[90%] sm:w-[30rem] -translate-x-1/2 -translate-y-1/2 flex-col rounded-2xl bg-[#0E1746]"
           }
         >
-          <div onClick={closeModal} className="absolute top-8 right-8">
+          <div
+            onClick={closeModal}
+            className="absolute top-4 right-4 sm:top-8 sm:right-8"
+          >
             <CloseModalIcon />
           </div>
           <div className="p-5 sm:p-8">
@@ -112,7 +116,38 @@ const Page = () => {
             <p className="text-sm mt-4 py-1 font-light">
               Select subscription plan
             </p>
-            <div className="py-5 pt-0  flex justify-center items-center">
+
+            <Tab.Group>
+              <Tab.List
+                className={cn(
+                  "flex my-3 justify-between rounded-md bg-[#FFFFFF1A]"
+                )}
+              >
+                {tablist.map((item: string, index: number) => {
+                  return (
+                    <Tab key={index} className={"outline-none w-full"}>
+                      {({ selected }) => (
+                        <div
+                          className={cn(
+                            "p-2 w-full flex-1 px-5 rounded-md outline-none",
+                            {
+                              "bg-white text-main_darker_blue ": selected,
+                            }
+                          )}
+                        >
+                          <p className="text-sm">
+                            {item}{" "}
+                            <span className="hidden sm:flex">Subscription</span>
+                          </p>
+                        </div>
+                      )}
+                    </Tab>
+                  );
+                })}
+              </Tab.List>
+              <Tab.Panels>{}</Tab.Panels>
+            </Tab.Group>
+            <div className="py-5 pt-0 flex justify-center items-center">
               {loading ? (
                 <div className="py-10">
                   <ReactLoader
@@ -127,7 +162,7 @@ const Page = () => {
                   value={selectedSubsciption}
                   onChange={setSelectedSubscription}
                   className={
-                    "grid grid-cols-1 gap-2 w-full max-h-[300px] overflow-y-scroll"
+                    "grid grid-cols-1 gap-2 w-full max-h-[250px] sm:max-h-[300px] overflow-y-scroll"
                   }
                 >
                   {subscriptionData?.data.map(
