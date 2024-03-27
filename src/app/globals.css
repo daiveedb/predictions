@@ -21,7 +21,7 @@ body{
   @apply text-2xl md:text-4xl font-semibold
 }
 .tab-button{
-  @apply p-2 w-[11.25rem] px-5 rounded-md outline-none
+  @apply p-2 w-[7rem] sm:w-[11.25rem] px-5 rounded-md outline-none
 }
 .contact-input{
   @apply w-full p-3 rounded-md my-1 outline-none text-black text-sm

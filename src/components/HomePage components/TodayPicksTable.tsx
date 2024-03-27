@@ -74,7 +74,7 @@ const TodayPicksTable: React.FunctionComponent<TodayTableProps> = ({
           >
             {headerGroup.headers.map((header) => (
               <th
-                className="mb-2 border-b p-4 px-10 text-left font-semibold whitespace-nowrap"
+                className="mb-2 border-b p-4 px-4 md:px-10 text-xs sm:text-sm md:text-base text-left font-semibold whitespace-nowrap"
                 key={header.id}
               >
                 {header.isPlaceholder
@@ -101,7 +101,10 @@ const TodayPicksTable: React.FunctionComponent<TodayTableProps> = ({
             key={row.id}
           >
             {row.getVisibleCells().map((cell) => (
-              <td className="px-10 py-4" key={cell.id}>
+              <td
+                className="px-4 md:px-10 py-4 text-xs sm:text-sm md:text-base"
+                key={cell.id}
+              >
                 {flexRender(cell.column.columnDef.cell, cell.getContext())}
               </td>
             ))}

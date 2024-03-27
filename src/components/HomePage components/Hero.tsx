@@ -2,6 +2,7 @@ import React from "react";
 import ButtonWithIcon from "../General/ButtonWithIcon";
 import UpRightArrow from "@/app/icons/UpRightArrow";
 import OutlineTelegram from "@/app/icons/OutlineTelegram";
+import Link from "next/link";
 
 const Hero = () => {
   return (
@@ -15,11 +16,13 @@ const Hero = () => {
         betting decisions.
       </p>
       <div className="w-[45%] flex gap-x-5 items-center">
-        <ButtonWithIcon
-          title="Subscribe"
-          classNames="rounded-full text-xs sm:text-sm md:text-base bg-yellow-500 text-black px-5"
-          icon={<UpRightArrow />}
-        />
+        <Link href={"/pricing"}>
+          <ButtonWithIcon
+            title="Subscribe"
+            classNames="rounded-full text-xs sm:text-sm md:text-base bg-yellow-500 text-black px-5"
+            icon={<UpRightArrow />}
+          />
+        </Link>
         <ButtonWithIcon
           title="Join us on Telegram"
           classNames="rounded-full bg-white text-xs sm:text-sm md:text-base text-black px-5 w-max text-nowrap nowrap"

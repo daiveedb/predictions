@@ -10,7 +10,7 @@ const Page = () => {
   const today = moment(Date.now()).format("YYYY-MM-DD");
   const tomorrow = moment(Date.now()).add(1, "days").format("YYYY-MM-DD");
   return (
-    <div className="p-10">
+    <div className="sm:p-10">
       {/* <SuperFreePicks
         title="Golden pack pro tips"
         classNames="bg-gradient from-transparent to-transparent border-none"

@@ -29,7 +29,7 @@ const SuperFreePicks: React.FunctionComponent<PicksTableProps> = ({
   return (
     <div
       className={cn(
-        "p-10 px-3 lg:px-10 bg-gradient-to-b mt-5 from-transparent to-cardBg_blue rounded-2xl rounded-tr-none relative border-[0.2px] border-[#FFFFFF54]",
+        "p-10 px-3 lg:px-10 bg-gradient-to-b my-5 from-transparent to-cardBg_blue rounded-2xl rounded-tr-none relative border-[0.2px] border-[#FFFFFF54]",
         classNames
       )}
     >
@@ -50,7 +50,7 @@ const SuperFreePicks: React.FunctionComponent<PicksTableProps> = ({
                         "bg-white text-main_darker_blue ": selected,
                       })}
                     >
-                      <p className="capitalize">{item}</p>
+                      <p className="capitalize text-sm sm:text-base">{item}</p>
                     </div>
                   )}
                 </Tab>

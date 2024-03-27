@@ -13,7 +13,7 @@ const UpcomingFixtures = () => {
         <p className="text-2xl md:text-4xl font-semibold">Upcoming Fixtures</p>
         <FootballImage height={40} width={40} />
       </div>
-      <div className="py-5 px-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+      <div className="py-5 xl:px-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
         {UpcomingMatches?.all_prediction
           ?.slice(0, 8)
           .map((item: fixtureCardProps, index: number) => {

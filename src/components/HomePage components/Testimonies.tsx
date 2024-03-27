@@ -5,15 +5,15 @@ import React from "react";
 
 const Testimonies = () => {
   return (
-    <div className="my-10 p-10">
+    <div className="my-10 p-4 md:p-10">
       <div className="flex justify-between items-end">
         <div>
-          <p className="text-4xl font-semibold">
+          <p className="text-2xl sm:text-3xl lg:text-4xl font-semibold">
             <span className="text-helperTitle">See what other</span> <br />
             punters are saying
           </p>
         </div>
-        <div className="flex gap-x-4 justify-between items-end">
+        <div className="hidden gap-x-4 justify-between md:flex items-end">
           <div className="grid grid-cols-5 gap-2">
             {socialIcons.map((item: any) => {
               return (
@@ -33,7 +33,7 @@ const Testimonies = () => {
           </div>
         </div>
       </div>
-      <div className="p-10 flex justify-between gap-x-5">
+      <div className="lg:p-10 py-10 flex flex-col md:flex-row justify-between gap-5">
         <div className="p-7 rounded-2xl bg-cardBg_blue">
           <OutlineStar />
           <p className="py-2 text-3xl tracking-tighter font-medium">

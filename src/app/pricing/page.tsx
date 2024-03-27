@@ -81,14 +81,14 @@ const Page = () => {
       <div className="fixed inset-0 z-40 bg-[#000000cc]">
         <Dialog.Panel
           className={
-            "absolute left-1/2 top-1/2 flex min-h-max font-wix md:min-h-[600px] text-white h-max w-[30rem] -translate-x-1/2 -translate-y-1/2 flex-col rounded-2xl bg-[#0E1746]"
+            "absolute left-1/2 top-1/2 flex min-h-max font-wix md:min-h-[600px] text-white h-max w-[90%] sm:w-[30rem] -translate-x-1/2 -translate-y-1/2 flex-col rounded-2xl bg-[#0E1746]"
           }
         >
           <div onClick={closeModal} className="absolute top-8 right-8">
             <CloseModalIcon />
           </div>
-          <div className="p-8">
-            <p className="text-2xl font-semibold font-">
+          <div className="p-5 sm:p-8">
+            <p className="text-xl sm:text-2xl font-semibold font-">
               Select Prediction Options
             </p>
             <p className="text-xs text-[#DDDDDD] w-[90%]">
@@ -112,7 +112,7 @@ const Page = () => {
             <p className="text-sm mt-4 py-1 font-light">
               Select subscription plan
             </p>
-            <div className="py-5 pt-0 flex justify-center items-center">
+            <div className="py-5 pt-0  flex justify-center items-center">
               {loading ? (
                 <div className="py-10">
                   <ReactLoader
@@ -126,7 +126,9 @@ const Page = () => {
                 <RadioGroup
                   value={selectedSubsciption}
                   onChange={setSelectedSubscription}
-                  className={"grid grid-cols-1 gap-2 w-full"}
+                  className={
+                    "grid grid-cols-1 gap-2 w-full max-h-[300px] overflow-y-scroll"
+                  }
                 >
                   {subscriptionData?.data.map(
                     (item: {
@@ -141,7 +143,7 @@ const Page = () => {
                           {({ checked }) => (
                             <div
                               className={cn(
-                                "w-full bg-[#FFFFFF33] rounded-md p-3 flex items-center gap-x-7 relative"
+                                "w-full bg-[#FFFFFF33] rounded-md p-3 flex items-center gap-x-3 sm:gap-x-7 relative"
                               )}
                             >
                               <div
@@ -150,10 +152,10 @@ const Page = () => {
                                   { "bg-[#FFB800]": checked }
                                 )}
                               ></div>
-                              <p className="capitalize">
+                              <p className="capitalize text-xs sm:text-sm md:text-base">
                                 {item.subscription_name}
                               </p>
-                              <div className="absolute inset-y-0 right-0 text-black w-[100px] font-semibold text-sm bg-white rounded-md flex justify-center items-center">
+                              <div className="absolute inset-y-0 right-0 text-black w-[80px] sm:w-[100px] font-semibold bg-white rounded-md flex justify-center items-center text-xs sm:text-xs">
                                 ₦{item?.subscription_amount}
                               </div>
                             </div>

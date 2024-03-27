@@ -15,7 +15,7 @@ const GameIcon: React.FunctionComponent<gameIconProps> = ({
 }) => {
   return (
     <div className="w-full">
-      <div className="relative h-[150px] w-[150px]">
+      <div className="relative lg:h-[150px] w-[120px] h-[120px] lg:w-[150px]">
         <Image alt="image of a game" src={imgSrc} fill />
         <div className="absolute top-2 right-2 bg-white text-black rounded-full p-2 text-xs">
           Play
