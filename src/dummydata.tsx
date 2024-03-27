@@ -35,57 +35,6 @@ export const navLinks: navLinkProps[] = [
   },
 ];
 
-export const upcomingFixtures: fixtureCardProps[] = [
-  {
-    team1: "Manchester United",
-    team2: "Manchester City",
-    date: "20 Jan, 2024 (5:00pm)",
-    competition: "Premier League",
-  },
-  {
-    team1: "Manchester United",
-    team2: "Manchester City",
-    date: "20 Jan, 2024 (5:00pm)",
-    competition: "Premier League",
-  },
-  {
-    team1: "Manchester United",
-    team2: "Manchester City",
-    date: "20 Jan, 2024 (5:00pm)",
-    competition: "Premier League",
-  },
-  {
-    team1: "Manchester United",
-    team2: "Manchester City",
-    date: "20 Jan, 2024 (5:00pm)",
-    competition: "Premier League",
-  },
-  {
-    team1: "Manchester United",
-    team2: "Manchester City",
-    date: "20 Jan, 2024 (5:00pm)",
-    competition: "Premier League",
-  },
-  {
-    team1: "Manchester United",
-    team2: "Manchester City",
-    date: "20 Jan, 2024 (5:00pm)",
-    competition: "Premier League",
-  },
-  {
-    team1: "Manchester United",
-    team2: "Manchester City",
-    date: "20 Jan, 2024 (5:00pm)",
-    competition: "Premier League",
-  },
-  {
-    team1: "Manchester United",
-    team2: "Manchester City",
-    date: "20 Jan, 2024 (5:00pm)",
-    competition: "Premier League",
-  },
-];
-
 export const predictionOptions: string[] = [
   "Over 1.5",
   "Over 1.5",

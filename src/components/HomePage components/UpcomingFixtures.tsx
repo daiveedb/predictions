@@ -1,5 +1,5 @@
 import FootballImage from "@/app/icons/FootballImage";
-import { upcomingFixtures } from "@/dummydata";
+
 import React from "react";
 import FixtureItemCard, { fixtureCardProps } from "./FixtureItemCard";
 import { useGetUpcomingMatches } from "@/api/getUpcomingMatches";
