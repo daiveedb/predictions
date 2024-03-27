@@ -26,3 +26,13 @@ body{
 .contact-input{
   @apply w-full p-3 rounded-md my-1 outline-none text-black text-sm
 }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
