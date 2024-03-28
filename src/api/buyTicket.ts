@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useMutation } from "@tanstack/react-query";
 
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
 export const buyTicket = async (data: {
   phone_number: string;
   subscription_id: number;
@@ -8,7 +9,7 @@ export const buyTicket = async (data: {
   amount: number;
 }) => {
   const response = await axios.post(
-    "https://libertydraw.com/api/v1/ussd_web/soccer_prediction/prediction_odds/",
+    `${BASE_URL}api/v1/ussd_web/soccer_prediction/prediction_odds/`,
     data
   );
   return response.data;

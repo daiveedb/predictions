@@ -32,6 +32,7 @@ const Page = () => {
   const setTransferDetails = useTransferDetails(
     (state: TransferDetailsStoreProps) => state.setTransferDetailsDetails
   );
+  const [error, setError] = useState("");
   const [selectedSubsciption, setSelectedSubscription] = useState<{
     id: number;
     subscription_name: string;
@@ -39,7 +40,6 @@ const Page = () => {
     subscription_duration: number;
     duration_of_subscription_type: string;
   }>();
-  const [error, setError] = useState("");
   const tablist = ["Weekly", "Monthly"];
 
   const handleSelect = () => {
@@ -63,10 +63,21 @@ const Page = () => {
               `/payment/?id=${selectedSubsciption?.id}&price=${selectedSubsciption?.subscription_amount}&name=${selectedSubsciption?.subscription_name}`
             );
           },
+          onError: (err: any) => {
+            console.log(err);
+
+            setTopError(
+              err?.response?.data?.phone_number[0] ||
+                err?.response?.data?.subscription_id[0] ||
+                "Something went wrong"
+            );
+          },
         }
       );
     }
   };
+
+  const [topError, setTopError] = useState("");
 
   useEffect(() => {
     if (subscriptionData) {
@@ -76,7 +87,7 @@ const Page = () => {
 
   useEffect(() => {
     if (phoneNumber?.length === 11) {
-      setError("");
+      setTopError("");
     }
   }, [phoneNumber]);
   return (
@@ -93,6 +104,17 @@ const Page = () => {
           >
             <CloseModalIcon />
           </div>
+          {topError && (
+            <div className="absolute top-0 text-center text-black left-0 w-full bg-red-500 text-xs rounded-t-md py-1 px-5 sm:px-8">
+              {topError}
+              <button
+                onClick={() => setTopError("")}
+                className="absolute right-2 text-black top-0 h-full flex justify-center items-center font-bold"
+              >
+                X
+              </button>
+            </div>
+          )}
           <div className="p-5 sm:p-8">
             <p className="text-xl sm:text-2xl font-semibold font-">
               Select Prediction Options
@@ -115,8 +137,12 @@ const Page = () => {
               onChange={(e) => setPhoneNumber(e.target.value)}
             />
             {error && <p className="text-red-400 text-xs">{error}</p>}
-            <p className="text-sm mt-4 py-1 font-light">
-              Select subscription plan
+            <p className="text-xs sm:text-sm mt-4 flex items-center gap-x-2 py-1 font-light">
+              Select subscription plan. click the{" "}
+              <span className="inline bg-white rounded p-1">
+                <DownArrow color="white" />
+              </span>{" "}
+              to learn more
             </p>
 
             <Tab.Group>
@@ -223,11 +249,11 @@ const Page = () => {
                                           </div>
                                           <Menu.Items
                                             className={
-                                              "absolute w-full top-full left-0"
+                                              "absolute w-full bottom-full left-0"
                                             }
                                           >
                                             <Menu.Item>
-                                              <div className="top-full absolute z-10 transition-all w-full">
+                                              <div className="bottom-full absolute z-10 transition-all w-full">
                                                 <GameDropDown
                                                   name={item.subscription_name}
                                                   price={

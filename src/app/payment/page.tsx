@@ -66,7 +66,7 @@ const Page = () => {
       <div className="fixed inset-0 z-40 bg-[#000000cc]">
         <Dialog.Panel
           className={
-            "absolute left-1/2 top-1/2 flex min-h-max font-wix md:min-h-[600px] text-white h-max w-[30rem] -translate-x-1/2 -translate-y-1/2 flex-col rounded-2xl bg-[#0E1746]"
+            "absolute left-1/2 top-1/2 flex min-h-max font-wix md:min-h-[300px] text-white h-max w-[90%] sm:w-[30rem] -translate-x-1/2 -translate-y-1/2 flex-col rounded-2xl bg-[#0E1746]"
           }
         >
           <div onClick={closeModal} className="absolute top-8 right-8">
@@ -90,16 +90,13 @@ const Page = () => {
               >
                 <div className="bg-white w-full h-full rounded-full"></div>
               </div>
-              <p className="capitalize">{pickName}</p>
-              <div className="absolute inset-y-0 right-0 text-black w-[100px] font-semibold text-sm bg-white rounded-md flex justify-center items-center">
+              <p className="capitalize text-xs sm:text-sm md:text-base">
+                {pickName}
+              </p>
+              <div className="absolute inset-y-0 right-0 text-black game-option-price w-[80px] sm:w-[100px] font-semibold text-sm bg-white rounded-md flex justify-center items-center">
                 ₦{pickPrice}
               </div>
             </div>
-
-            <p className="text-sm font-light py-1">
-              Select your preferred bank and confirm, dial USSD code and make
-              payment.
-            </p>
 
             {transferDetails?.account_name &&
               transferDetails.account_number &&
@@ -125,7 +122,7 @@ const Page = () => {
                   </div>
                 </div>
               )}
-            <div className="pt-10">
+            <div className="pt-2">
               <button
                 onClick={handlePaystack}
                 className="w-full bg-white flex justify-center gap-x-2 items-center outline-none rounded-md p-3 text-black my-4 mb-2 disabled:bg-[#FFB80066]"
@@ -143,9 +140,6 @@ const Page = () => {
                     <p>Pay with paystack</p>
                   </>
                 )}
-              </button>
-              <button className="w-full bg-[#FFB800] outline-none rounded-md p-3 text-black my-4 mt-0 disabled:bg-[#FFB80066]">
-                Confirm Payment
               </button>
             </div>
           </div>
