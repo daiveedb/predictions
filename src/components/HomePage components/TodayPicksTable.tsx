@@ -44,10 +44,10 @@ const TodayPicksTable: React.FunctionComponent<TodayTableProps> = ({
       header: "Tip",
       cell: (info) => info.renderValue(),
     }),
-    columnHelper.accessor((row) => row.predicted_home_score_odd, {
-      header: "Odds",
-      cell: (info) => info.renderValue(),
-    }),
+    // columnHelper.accessor((row) => row.predicted_home_score_odd, {
+    //   header: "Odds",
+    //   cell: (info) => info.renderValue(),
+    // }),
   ];
   const router = useRouter();
   const [data, setData] = React.useState(() => [...tableData]);
