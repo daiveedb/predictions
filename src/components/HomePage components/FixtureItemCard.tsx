@@ -24,9 +24,9 @@ const FixtureItemCard: React.FunctionComponent<fixtureCardProps> = ({
         <p>{moment(fixture_date).format("MMM Do YY (LT)")}</p>
       </div>
       <div className=" flex justify-between">
-        <p>{home_team}</p>
-        <p>vs</p>
-        <p>{away_team}</p>
+        <p className="flex-[3]">{home_team}</p>
+        <p className="flex-1 flex justify-center">vs</p>
+        <p className="flex-[3] flex justify-end">{away_team}</p>
       </div>
     </div>
   );

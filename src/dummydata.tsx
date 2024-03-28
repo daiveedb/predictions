@@ -54,31 +54,31 @@ export const otherGames: gameIconProps[] = [
     id: 1,
     game: "Quicka3x",
     imgSrc: "/predictionImages/quicka3x.png",
-    url: "",
+    url: "https://www.wisewinn.com/quika",
   },
   {
     id: 2,
     game: "Instant Cashout",
     imgSrc: "/predictionImages/instantCashout.png",
-    url: "",
+    url: "https://www.wisewinn.com/instant-cashout",
   },
   {
     id: 3,
     game: "Slots",
     imgSrc: "/predictionImages/slots.png",
-    url: "",
+    url: "https://games.wisewinn.com/",
   },
   {
     id: 4,
     game: "Awoof",
     imgSrc: "/predictionImages/awoof.png",
-    url: "",
+    url: "https://www.wisewinn.com/awoof",
   },
   {
     id: 5,
     game: "Soccer Cash",
     imgSrc: "/predictionImages/soccerCash.png",
-    url: "",
+    url: "https://www.wisewinn.com/soccer-cash",
   },
 ];
 

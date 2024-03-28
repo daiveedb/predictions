@@ -220,7 +220,7 @@ const Page = () => {
                                       <Menu>
                                         <div
                                           className={cn(
-                                            "w-full bg-[#FFFFFF33] game-option rounded-md p-3 flex items-center gap-x-3 sm:gap-x-7 relative"
+                                            "w-full bg-[#FFFFFF33] cursor-pointer game-option rounded-md p-3 flex items-center gap-x-3 sm:gap-x-7 relative"
                                           )}
                                         >
                                           <div

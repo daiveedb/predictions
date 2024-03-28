@@ -61,7 +61,12 @@ const Page = () => {
     );
   };
   return (
-    <Dialog open={true} onClose={() => {}}>
+    <Dialog
+      open={true}
+      onClose={() => {
+        closeModal();
+      }}
+    >
       <Toaster position="top-center" />
       <div className="fixed inset-0 z-40 bg-[#000000cc]">
         <Dialog.Panel
