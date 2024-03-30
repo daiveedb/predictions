@@ -25,8 +25,8 @@ export default function Home() {
         {freePicksData && (
           <SuperFreePicks
             tablist={["Today", "Tomorrow"]}
-            list1={freePicksData?.all_prediction[today]}
-            list2={freePicksData?.all_prediction[tomorrow]}
+            list1={freePicksData?.all_prediction[today] || []}
+            list2={freePicksData?.all_prediction[tomorrow] || []}
           />
         )}
         {isLoading && (

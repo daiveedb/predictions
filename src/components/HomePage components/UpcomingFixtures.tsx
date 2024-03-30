@@ -8,7 +8,7 @@ const UpcomingFixtures = () => {
   const { data: UpcomingMatches, isLoading: fixturesLoading } =
     useGetUpcomingMatches();
   return (
-    UpcomingMatches && (
+    UpcomingMatches?.all_prediction.length > 1 && (
       <div className="md:p-10 py-10">
         <div className="flex gap-x-4 items-center">
           <p className="text-2xl md:text-4xl font-semibold">
